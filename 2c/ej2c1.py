@@ -51,7 +51,13 @@ Exemple:
 
 def convert_to_integer(string):
     # Write here your code
-    pass
+    try:
+        entero = int(string)
+        return(entero)
+    except TypeError:
+        return ("An unexpected error has occurred:")
+    except ValueError:
+        return ("The string cannot be converted to an integer")
 
 
 # Si quieres probar tu código, descomenta las siguientes líneas y ejecuta el script
