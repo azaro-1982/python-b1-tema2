@@ -47,10 +47,25 @@ Exemple:
 """
 
 
-def triangle_area_calculate(
-    base, height):
+def triangle_area_calculate(base: float, height: float) -> float:
     # Write here your code
-    pass
+    """
+    Esta función tiene que devolver el área de un triángulo
+        base(float): tiene que ser un valor positivo y mayor
+        que 0
+        height(float): tiene que ser un valor positivo y mayor
+        que 0
+        return(float): devuelve el área del triángulo
+    """
+    base = float(base)
+    altura = float(height)
+    area = 0
+    if (base <= 0) or (altura <= 0):
+        raise ValueError("La altura y la base deben de ser valores\
+                          positivos mayores que 0")
+    else:
+        area = (base * altura) / 2
+    return area
 
 
 # Si quieres probar tu código, descomenta las siguientes líneas y ejecuta
@@ -59,4 +74,4 @@ def triangle_area_calculate(
 # Si vols provar el teu codi, descomenta les línies següents i executa
 # l'scrip
 
-# print(triangle_area_calculate(33, 45))
+print(triangle_area_calculate(33, 45))

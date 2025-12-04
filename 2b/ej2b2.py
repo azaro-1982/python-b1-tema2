@@ -60,10 +60,22 @@ L'any a comprovar serà '2000', de manera que:
 """
 
 
-def check_leap_year(
-    year):
+def check_leap_year(year: int) -> bool:
     # Write here your code
-    pass
+    """
+    Esta función devuelve si un año es bisiesto o no.
+    """
+    bisiesto = False
+    if (year % 4 == 0) and (year % 100 != 0):
+        bisiesto = True
+        return bisiesto
+    elif (year % 4 == 0) and (year % 100 == 0) and (year % 400 == 0):
+        bisiesto = True
+        return bisiesto
+    elif (year % 4 == 0) and (year % 100 == 0) and (year % 400 != 0):
+        bisiesto = False
+        return bisiesto
+    return False
 
 
 # Si quieres probar tu código, descomenta las siguientes líneas y ejecuta el
@@ -72,4 +84,4 @@ def check_leap_year(
 # Si vols provar el teu codi, descomenta les línies següents i executa
 # l'script
 
-# print(check_leap_year(2000))
+print(check_leap_year(2023))
