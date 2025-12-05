@@ -1,3 +1,4 @@
+from decimal import Decimal, ROUND_HALF_UP
 """
 Enunciado:
 Implementa una función 'convert_kg_to_lb' que reciba como parámetro un valor
@@ -48,11 +49,17 @@ Exemple:
 """
 
 
-def kg_to_lb(kg):
+def kg_to_lb(kg: float):
     # Write here your code
-    pass
+    # Primero se comprueba si es de tipo numérico
+    if not isinstance(kg,(int, float)):
+        raise TypeError
+    # Posteriormente compruebo si 
+    if kg <= 0:
+        raise ValueError
+    return round(kg * 2.20462, 2)
 
 
 # Si quieres probar tu código, descomenta las siguientes líneas y ejecuta el script
 # Si vols provar el teu codi, descomenta les línies següents i executa l'script
-#print(kg_to_lb(50))
+# print(kg_to_lb(50))
